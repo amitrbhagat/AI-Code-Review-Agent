@@ -1,0 +1,13 @@
+# Python virtual environment
+venv/
+
+# Secrets - never commit these
+.env
+*.pem
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Local database (used from Day 13)
+dev.db
