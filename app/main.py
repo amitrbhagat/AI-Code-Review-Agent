@@ -1,8 +1,18 @@
+import logging
 from fastapi import FastAPI
 
 from app.config import settings
 
 app = FastAPI(title = settings.app_name)
+
+from app.webhook import router as webhook_router
+
+logging.basicConfig(level=settings.log_level, format="%(levelname)s: %(message)s")
+
+
+
+
+app.include_router(webhook_router)
 
 
 @app.get("/health")
