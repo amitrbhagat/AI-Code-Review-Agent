@@ -34,7 +34,7 @@ async def received_webhook(request: Request,
                            x_github_event: str = Header(default=""), 
                            x_hub_signature_256: str = Header(default="")):
 
-    body = await request.body()
+    body = await request.body() 
 
     if not signature_is_valid(body, x_hub_signature_256):
         logger.warning("Webhook Rejected: Bad Signature")
